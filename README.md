@@ -142,7 +142,7 @@ The plist file should become like this :
     CidaasFacebook.delegate = self
 ```
 
-10. Call the `login()` method and receive the access token as callback
+10. Call the `cidaasFacebookLogin()` method and receive the access token as callback
 
 ```swift 
     CidaasFacebook.cidaasFacebookLogin { response in
