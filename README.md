@@ -137,6 +137,8 @@ The plist file should become like this :
 </plist>
 ```
 
+For more details to find app id and urls <a href = https://github.com/Cidaas/cidaas-sdk-ios#user-content-steps-to-find-app-id-and-urls> Find AppId and AppURLs </a>
+
 7. Mention the file name in **AppDelegate.swift**
 
 ```swift
