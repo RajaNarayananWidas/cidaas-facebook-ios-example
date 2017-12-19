@@ -84,19 +84,65 @@ The following steps are to be followed to use this <b>Cidaas-Facebook</b>
     CidaasFacebook.cidaasBecomeActive(application)
 ```
 
-6. In your project's ViewController file, import the `Cidaas_Facebook` module
+6. Create a plist file and fill all the inputs in key value pair. The inputs are below mentioned.
+
+The plist file should become like this :
+
+```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+    <plist version="1.0">
+        <dict>
+            <key>  AuthorizationURL  </key>
+            <string>  Your authorization url  </string>
+            
+            <key>  TokenURL  </key>
+            <string>  Your token url  </string>
+        
+            <key>  UserInfoURL  </key>
+            <string>  Your user info url  </string>
+    
+            <key>  LogoutURL  </key>
+            <string>  Your logout url  </string>
+
+            <key>  ClientID  </key>
+            <string>  Your client id  </string>
+
+            <key>  ClientSecret  </key>
+            <string>  Your client secret  </string>
+
+            <key>  RedirectURI  </key>
+            <string>  Your redirect uri  </string>
+
+            <key>  ViewType  </key>
+            <string>  Your view type  </string>
+            
+            <key>SocialUrl</key>
+            <string>your social url</string>
+        </dict>
+    </plist>
+```
+
+7. Mention the file name in AppDelegate.swift
+
+```swift
+    CidaasSDK.plistFilename = "Your file name"
+```
+
+8. In your project's ViewController file, import the `Cidaas_Facebook` module
 
 ```swift
     import Cidaas_Facebook
 ```
 
-7. Assign the delegate of CidaasFacebook by setting the current ViewController
+9. Assign the delegate of CidaasFacebook by setting the current ViewController
 
 ```swift
     CidaasFacebook.delegate = self
 ```
 
-8. Call the `login()` method and receive the access token as callback
+10. Call the `cidaasFacebookLogin()` method and receive the access token as callback
 
 ```swift 
     CidaasFacebook.cidaasFacebookLogin { response in
