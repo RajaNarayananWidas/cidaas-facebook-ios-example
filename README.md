@@ -8,80 +8,95 @@ https://docs.cidaas.de/
 
 ## Requirements
 
-    Operating System    :   iOS 9.0 or above
-    Xcode               :   8
-    Swift               :   3.0
+    Operating System    :   iOS 10.0 or above
+    Xcode               :   9
+    Swift               :   4.0
 
 ## Installation
 
-Cidaas-Facebook is available through [CocoaPods](https://cocoapods.org/pods/Cidaas-Facebook). To install
-it, simply add the following line to your Podfile:
+**Cidaas-Facebook** is available through [CocoaPods](https://cocoapods.org/pods/Cidaas-Facebook). To install it, simply add the following line to your Podfile:
 
 ```swift
-pod 'Cidaas-Facebook'
+pod 'Cidaas-Facebook', '9.4.1'
 ```
 
 ## Creating Facebook App
 
-The following steps are to be followed to create a Facebook App
-1. Once Gradle sync is completed, Go to the [Facebook Developers Console](https://developers.facebook.com/), add a new App then give it a valid name and click "Create App Id"
+The following steps are to be followed to create a **Facebook App**
+
+1. Once Gradle sync is completed, Go to the [Facebook Developers Console](https://developers.facebook.com/), add a new App then give it a valid name and click **Create App Id**
+
 2. Take note of the App ID
-3. On the left side, you have the navigation drawer. Click Settings and then Basic
-4. Click Add Platform and Choose iOS
+
+3. On the left side, you have the navigation drawer. Click **Settings** and then Basic
+
+4. Click **Add Platform** and Choose iOS
+
 5. Enter your project's bundle id
-6. Turn on "Single Sign On" and click "Save changes"
+
+6. Turn on **Single Sign On** and click **Save changes**
 
 ## Getting Started 
 
-The following steps are to be followed to use this <b>Cidaas-Facebook</b>
+The following steps are to be followed to use this **Cidaas-Facebook**
 
 1. Copy and paste the following code in your Info.plist file
 
 ```xml
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fbyour_app_id</string>
-            </array>
-        </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>your app id</string>
-    <key>FacebookDisplayName</key>
-    <string>your app name</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>fbyour_app_id</string>
+        </array>
+    </dict>
+</array>
+
+<key>FacebookAppID</key>
+<string>your app id</string>
+
+<key>FacebookDisplayName</key>
+<string>your app name</string>
+
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>fbapi</string>
+    <string>fb-messenger-api</string>
+    <string>fbauth2</string>
+    <string>fbshareextension</string>
+</array>
 ```
 
-2. In your project's AppDelegate file, import the `Cidaas_Facebook` module
+2. In your project's **AppDelegate.swift** file, import the **Cidaas_Facebook** module
 
 ```swift
-    import Cidaas_Facebook
+import Cidaas_Facebook
 ```
 
-3. Inside the AppDelegate's `application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)` method, redirect the parameters to the `CidaasFacebook` class method `didFinishLaunchingOptions()`
+3. Inside the AppDelegate's **application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)** method, redirect the parameters to the **CidaasFacebook** class method **didFinishLaunchingOptions()**
 
 ```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     CidaasFacebook.didFinishLaunchingOptions(application, didFinishLaunchingWithOptions: launchOptions)
+    return true
+}
 ```
 
-4. Inside the AppDelegate's `application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:])` method, redirect the parameters to the `CidaasFacebook` class method `openUrlConfig()` and has to be returned 
+4. Inside the AppDelegate's **application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:])** method, redirect the parameters to the **CidaasFacebook** class method **openUrlConfig()** and has to be returned 
 
 ```swift
+func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
     return CidaasFacebook.openUrlConfig(app, open: url, options: options)
+}
 ```
 
-5. Inside the AppDelegate's `applicationDidBecomeActive(_ application: UIApplication)` method, redirect the paramters to the `CidaasFacebook` class method `cidaasBecomeActive()`
+5. Inside the AppDelegate's **applicationDidBecomeActive(_ application: UIApplication)** method, redirect the paramters to the **CidaasFacebook** class method **cidaasBecomeActive()**
 
 ```swift
+func applicationDidBecomeActive(_ application: UIApplication) {       
     CidaasFacebook.cidaasBecomeActive(application)
+}
 ```
 
 6. Create a plist file and fill all the inputs in key value pair. The inputs are below mentioned.
@@ -89,137 +104,139 @@ The following steps are to be followed to use this <b>Cidaas-Facebook</b>
 The plist file should become like this :
 
 ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 
-    <plist version="1.0">
-        <dict>
-            <key>  AuthorizationURL  </key>
-            <string>  Your authorization url  </string>
+<plist version="1.0">
+    <dict>
+        <key>  AuthorizationURL  </key>
+        <string>  Your authorization url  </string>
             
-            <key>  TokenURL  </key>
-            <string>  Your token url  </string>
+        <key>  TokenURL  </key>
+        <string>  Your token url  </string>
         
-            <key>  UserInfoURL  </key>
-            <string>  Your user info url  </string>
+        <key>  UserInfoURL  </key>
+        <string>  Your user info url  </string>
+
+        <key>SocialUrl</key>
+        <string>your social url</string>
+
+        <key>  RedirectURI  </key>
+        <string>  Your redirect uri  </string>
     
-            <key>  LogoutURL  </key>
-            <string>  Your logout url  </string>
+        <key>  LogoutURL  </key>
+        <string>  Your logout url  </string>
 
-            <key>  ClientID  </key>
-            <string>  Your client id  </string>
+        <key>  ClientID  </key>
+        <string>  Your client id  </string>
 
-            <key>  ClientSecret  </key>
-            <string>  Your client secret  </string>
-
-            <key>  RedirectURI  </key>
-            <string>  Your redirect uri  </string>
-
-            <key>  ViewType  </key>
-            <string>  Your view type  </string>
+        <key>  ViewType  </key>
+        <string>  Your view type  </string>
             
-            <key>SocialUrl</key>
-            <string>your social url</string>
-        </dict>
-    </plist>
+    </dict>
+</plist>
 ```
 
-7. Mention the file name in AppDelegate.swift
+7. Mention the file name in **AppDelegate.swift**
 
 ```swift
-    CidaasSDK.plistFilename = "Your file name"
+CidaasSDK.plistFilename = "Your file name"
 ```
 
-8. In your project's ViewController file, import the `Cidaas_Facebook` module
+8. In your project's **ViewController.swift** file, import the **Cidaas_Facebook** module
 
 ```swift
-    import Cidaas_Facebook
+import Cidaas_Facebook
 ```
 
-9. Assign the delegate of CidaasFacebook by setting the current ViewController
+9. Assign the delegate of **CidaasFacebook** by setting the current ViewController and simply initialise the **CidaasFacebook**
 
 ```swift
-    CidaasFacebook.delegate = self
+CidaasFacebook.delegate = self
+var cidaas = CidaasFacebook()
 ```
 
-10. Call the `cidaasFacebookLogin()` method and receive the access token as callback
+10. Call the **cidaasFacebookLogin()** method and receive the cidaas access token information and user information as callback
 
 ```swift 
-    CidaasFacebook.cidaasFacebookLogin { response in
-        if response.success == true {
-            print ("Access Token : " + response.access_token);
-        }
-        else {
-            print ("Login Error");
-        }
-    }
+CidaasFacebook.cidaasFacebookLogin { token_response in
+    // your code here
+}
 ```
 
 ## Sample Code
 
-AppDelegate.swift
+**AppDelegate.swift**
 
 ```swift
-    import UIKit
-    import Cidaas_Facebook
+import UIKit
+import Cidaas_Facebook
+import Cidaas_SDK
 
-    @UIApplicationMain
-    class AppDelegate: UIResponder, UIApplicationDelegate {
-        var window: UIWindow?
-        
-        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:     [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-            CidaasFacebook.didFinishLaunchingOptions(application, didFinishLaunchingWithOptions: launchOptions)
-            return true
-        }
-        
-        func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-            return CidaasFacebook.openUrlConfig(app, open: url, options: options)
-        }
-        
-        func applicationWillResignActive(_ application: UIApplication) {   
-        }
-        
-        func applicationDidEnterBackground(_ application: UIApplication) {    
-        }
-        
-        func applicationWillEnterForeground(_ application: UIApplication) {
-        }
-        
-        func applicationDidBecomeActive(_ application: UIApplication) {   
-            CidaasFacebook.cidaasBecomeActive(application)
-        }
-        
-        func applicationWillTerminate(_ application: UIApplication) {
-        }
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        CidaasSDK.plistFilename = "Cidaas"
+        CidaasFacebook.didFinishLaunchingOptions(application, didFinishLaunchingWithOptions: launchOptions)
+        return true
     }
+
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return CidaasFacebook.openUrlConfig(app, open: url, options: options)
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        CidaasFacebook.cidaasBecomeActive(application)
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+    }
+}
 ```
 
-ViewController.swift
+**ViewController.swift**
 
 ```swift
-    import UIKit
-    import Cidaas_Facebook
-    
-    class ViewController: UIViewController {
-    @IBOutlet var btn_facebook: UIButton!
+import UIKit
+import Cidaas_Facebook
+import Cidaas_SDK
 
+class ViewController: UIViewController, LoaderDelegate {
+
+    @IBOutlet var btn_facebook: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        CidaasSDK.loaderDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()   
+        super.didReceiveMemoryWarning()
+        
     }
 
     @IBAction func btnAction(_ sender: Any) {
         CidaasFacebook.delegate = self
+        _ = CidaasFacebook()
         CidaasFacebook.cidaasFacebookLogin { loginResponse in
-            if loginResponse.success == true {
-                CidaasSDK.getUserInfo(accessToken: loginResponse.accessToken!) { token_response in
+            if loginResponse.issuccess == true {
+                
+                CidaasSDK.getUserInfo(accessToken: (loginResponse.accessTokenEntity?.accessToken)!) { token_response in
                     let alert = UIAlertController(title: "Display Name", message: token_response.displayName, preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default))
                     self.present(alert, animated: true, completion: nil)
                 }
+                
             }
             else {
                 let alert = UIAlertController(title: "Error", message: loginResponse.errorMessage, preferredStyle: UIAlertControllerStyle.alert)
@@ -228,9 +245,17 @@ ViewController.swift
             }
         }
     }
+    
+    func showLoader() {
+        CustomLoader.sharedCustomLoaderInstance.showLoader(self.view, using: nil) { (hud) in
+            
+        }
+    }
+    
+    func hideLoader() {
+        CustomLoader.sharedCustomLoaderInstance.hideLoader(self.view)
+    }
 }
-
-
 ```
 
 ## Screen Shots
