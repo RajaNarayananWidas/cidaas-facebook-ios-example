@@ -24,7 +24,7 @@ pod 'Cidaas-Facebook', '9.4.1'
 
 The following steps are to be followed to create a **Facebook App**
 
-1. Once Gradle sync is completed, Go to the [Facebook Developers Console](https://developers.facebook.com/), add a new App then give it a valid name and click **Create App Id**
+1. Go to the [Facebook Developers Console](https://developers.facebook.com/), add a new App then give it a valid name and click **Create App Id**
 
 2. Take note of the App ID
 
