@@ -1,57 +1,52 @@
 PODS:
-  - Alamofire (4.5.0)
+  - Alamofire (4.5.1)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - Cidaas-Facebook (1.5.0):
-    - CidaasSDK
-    - FacebookCore
-    - FacebookLogin
-  - CidaasSDK (1.7.0):
-    - Alamofire
-    - CryptoSwift
-    - EVReflection (~> 4.10.1)
-    - KVNProgress
-    - ReachabilitySwift
-  - CryptoSwift (0.6.9)
-  - EVReflection (4.10.2):
-    - EVReflection/Core (= 4.10.2)
-  - EVReflection/Core (4.10.2)
-  - FacebookCore (0.2.0):
+  - Cidaas-Facebook (9.4.1):
+    - Cidaas-SDK (= 9.4.6)
+    - FacebookCore (= 0.3.0)
+    - FacebookLogin (= 0.3.0)
+  - Cidaas-SDK (9.4.6):
+    - Alamofire (= 4.5.1)
+    - CryptoSwift (= 0.7.2)
+    - libCommonCrypto (= 0.1.1)
+    - ReachabilitySwift (= 3)
+  - CryptoSwift (0.7.2)
+  - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
-    - FBSDKCoreKit (~> 4.15)
-  - FacebookLogin (0.2.0):
+    - FBSDKCoreKit (~> 4.27)
+  - FacebookLogin (0.3.0):
     - Bolts (~> 1.8)
-    - FacebookCore (~> 0.2)
-    - FBSDKCoreKit (~> 4.15)
-    - FBSDKLoginKit (~> 4.15)
-  - FBSDKCoreKit (4.24.0):
+    - FacebookCore (~> 0.3)
+    - FBSDKCoreKit (~> 4.27)
+    - FBSDKLoginKit (~> 4.27)
+  - FBSDKCoreKit (4.29.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.24.0):
+  - FBSDKLoginKit (4.29.0):
     - FBSDKCoreKit
-  - KVNProgress (2.3.1)
+  - libCommonCrypto (0.1.1)
   - ReachabilitySwift (3)
 
 DEPENDENCIES:
-  - Cidaas-Facebook
+  - Cidaas-Facebook (= 9.4.1)
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Cidaas-Facebook: 9405c8cab6e14883e745fe468d10b1fe29e2d2d2
-  CidaasSDK: ab5f8498a0ca64a8da8aed8a307fd94ba8d06a81
-  CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
-  EVReflection: 4dfcad0b628a91ede5cad724e0609277369bf157
-  FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
-  FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
-  FBSDKCoreKit: f8c9eb0dd34a9cd277c7b60da4b32226d142502d
-  FBSDKLoginKit: 1214c6d5a1c4995b694d8db8a9ba6910c6028acf
-  KVNProgress: 8167b1f19e2758290c0b6143020ed9dcbb0477a1
+  Cidaas-Facebook: ad322882e3a52babdb6f8035462b040cb6bee514
+  Cidaas-SDK: 11dede70a053f0760d5d978982f65d9dc8c27280
+  CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
+  FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
+  FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
+  FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
+  FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
+  libCommonCrypto: 8bc2f53375ef9815ddd9dd663e110e1cced41747
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
 
-PODFILE CHECKSUM: dd0abc3ec9d65d02678c229b9cd86c83861bc826
+PODFILE CHECKSUM: 5509b26f093a801d9345be992ef58d0fe810483b
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

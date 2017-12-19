@@ -5,6 +5,6 @@ target 'FacebookExample' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Cidaas-Facebook'
+  pod 'Cidaas-Facebook', '9.4.1'
 
 end
