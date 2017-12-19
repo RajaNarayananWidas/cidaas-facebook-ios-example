@@ -54,10 +54,10 @@ The following steps are to be followed to use this **Cidaas-Facebook**
 </array>
 
 <key>FacebookAppID</key>
-<string>your app id</string>
+<string>your fb app id</string>
 
 <key>FacebookDisplayName</key>
-<string>your app name</string>
+<string>your fb app name</string>
 
 <key>LSApplicationQueriesSchemes</key>
 <array>
@@ -151,11 +151,10 @@ CidaasSDK.plistFilename = "Your file name"
 import Cidaas_Facebook
 ```
 
-9. Assign the delegate of **CidaasFacebook** by setting the current ViewController and simply initialise the **CidaasFacebook**
+9. Assign the delegate of **CidaasFacebook** by setting the current ViewController
 
 ```swift
 CidaasFacebook.delegate = self
-var cidaas = CidaasFacebook()
 ```
 
 10. Call the **cidaasFacebookLogin()** method and receive the cidaas access token information and user information as callback
@@ -164,6 +163,13 @@ var cidaas = CidaasFacebook()
 CidaasFacebook.cidaasFacebookLogin { token_response in
     // your code here
 }
+```
+
+if you are using **Cidaas-SDK** additionally, no need to manually call the **cidaasFacebookLogin** function, just simply initialise the **CidaasFacebook** class. and assigning the delegate
+
+```swift
+var cidaas = CidaasFacebook()
+CidaasFacebook.delegate = self
 ```
 
 ## Sample Code
