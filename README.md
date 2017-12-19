@@ -165,7 +165,7 @@ CidaasFacebook.cidaasFacebookLogin { token_response in
 }
 ```
 
-if you are using **Cidaas-SDK** additionally, no need to manually call the **cidaasFacebookLogin** function, just simply initialise the **CidaasFacebook** class and assign the delegate
+If you are using **Cidaas-SDK** additionally, no need to manually call the **cidaasFacebookLogin** function, just simply initialise the **CidaasFacebook** class and assign the delegate
 
 ```swift
 var cidaas = CidaasFacebook()
